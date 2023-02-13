@@ -1,1 +1,174 @@
 
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" href="https://notion-emojis.s3-us-west-2.amazonaws.com/prod/svg-twitter/1f304.svg">
+  <title>MY NEWSFEED</title>
+  <!-- local css -->
+  <link rel="stylesheet" href="style.css">
+  <!-- Bootstrap css -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+  <!-- axious Script -->
+  <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+  <!-- font awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
+    integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <!-- Animate css -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+</head>
+
+<body class="bg-light animate__animated animate__zoomIn">
+  <main class="mt-sm-0 mt-md-3 mt-lg-3">
+    <!-- main body of structure -->
+    <div class="main-box row">
+      <div class="bg-white border-1 shadow-lg shadow-md mb-5 bg-body rounded col-sm-12 col-md-8 col-lg-6 box-1">
+        <!-- Logo section -->
+        <div class="log m-3">
+          <div class="logo-1">
+            <div class="logo-img row">
+              <a href="index.html"><img class="col-lg-12 col-md-12 col-sm-12"
+                  src="https://notion-emojis.s3-us-west-2.amazonaws.com/prod/svg-twitter/1f304.svg"
+                  alt="NewsFeed_log_Error" width="100px" height="100px"></a>
+            </div>
+            <div class="logo-text row">
+              <a href="index.html">
+                <h1 class="text-dark text-center fw-bold col-lg-12 col-md-12 col-sm-12 overflow-hidden">MY NEWSFEED</h1>
+              </a>
+            </div>
+          </div>
+        </div>
+        <!-- News Button Section -->
+        <div class="news_button_body bg-dark p-5 mb-3 rounded">
+          <div class="news_banner_name ">
+            <div class="banner_name row">
+              <h2 class="text-dark bg-white fw-bold ps-5 pe-5 pt-2 pb-2 col-sm-12 col-md-12 col-lg-12">MY NEWSFEED</h2>
+            </div>
+          </div>
+          <div class="news_buttons mt-4 row">
+            <div class="news_button_1 col-lg-6 col-md-6 col-sm-12">
+              <a href="#savedNews">
+                <button onclick="saved_N(this)"
+                  class="btn btn-warning fw-bold ps-5 pe-5 ps-md-3 pe-md-3 ps-lg-5 pe-lg-5 float-lg-start float-md-start float-sm-start">LOAD
+                  SAVED NEWS</button></a>
+            </div>
+            <div class="news_button_1 col-lg-6 col-md-6 col-sm-12">
+              <a href="#newNews">
+                <button onclick="clicked(this)"
+                  class="btn btn-warning fw-bold ps-5 pe-5 ps-md-3 pe-md-3 ps-lg-5 pe-lg-5 float-lg-end float-md-end float-sm-start">LOAD
+                  NEW NEWS</button>
+              </a>
+            </div>
+          </div>
+        </div>
+        <div class="txt-content p-3 mb-3">
+          <h2 class="text-center text-dark fw-bold overflow-hidden">GET LATEST NEWS</h2><br>
+          <h2 class="text-center text-black fw-bold overflow-hidden">STAY UPDATED</h2>
+        </div>
+
+      </div>
+
+      <!-- Saved news area -->
+      <div class="saved-section" id="savedNews">
+        <div class="saved-section_1 row">
+          <div class="bg-white shadow-lg shadow-md mb-3 bg-body rounded col-sm-12 col-md-8 col-lg-6 box-1">
+            <div class="saved_news bg-dark p-3 mb-3 mt-3 text-white rounded">
+              <div class="saved_news_1 row">
+                <button class="btn btn-light col-lg-3 col-md-3 col-sm-4 rounded-0 text-dark fw-bold m-2 text-center">MY
+                  NEWSFEED</button>
+                <button
+                  class="btn btn-warning col-lg-3 col-md-3 col-sm-4 rounded-0 text-dark fw-bold m-2 text-center">SAVED
+                  NEWS</button>
+              </div>
+            </div>
+            <!-- Saved news outut area -->
+            <div class="new_news_output">
+              <div class="textbox stored">
+
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- new news  -->
+      <div class="new-section" id="newNews">
+        <div class="new-section_1 row">
+          <div class="bg-white shadow-lg shadow-md mb-3 bg-body rounded col-sm-12 col-md-8 col-lg-6 box-1">
+            <div class="new_news bg-dark p-3 mb-3 mt-3 text-white rounded">
+              <div class="saved_news_1 row">
+                <button class="btn btn-light col-lg-3 col-md-3 col-sm-4 rounded-0 text-dark fw-bold m-2 text-center">MY
+                  NEWSFEED</button>
+                <button
+                  class="btn btn-warning col-lg-3 col-md-3 col-sm-4 rounded-0 text-dark fw-bold m-2 text-center">NEW
+                  NEWS</button>
+              </div>
+              <div class="news_category row">
+                <button
+                  class="btn btn-warning col-lg-4 col-md-4 col-sm-4 rounded-0 text-dark fw-bold m-2 text-center">SELECT
+                  CATEGORY</button>
+                <nav class="navbar navbar-expand-lg">
+                  <div class=" container-fluid">
+                    <button class="navbar-toggler bg-warning border-0" type="button" data-bs-toggle="collapse"
+                      data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                      aria-expanded="false" aria-label="Toggle navigation">
+                      <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse current1 navbar-collapse row" id="navbarSupportedContent">
+                      <button type="button"
+                        class=" col-lg-2 col-md-3 col-sm-4 btn btn-warning text-dark fw-bold m-2 text-center"
+                        value="business" onclick="clicked(this)">BUSINESS</button>
+                      <button type="button"
+                        class="col-lg-2 col-md-3 col-sm-4 btn btn-warning text-dark fw-bold m-2 text-center" value="all"
+                        onclick="clicked(this)">ALL</button>
+                      <button type="button"
+                        class="col-lg-2 col-md-3 col-sm-4 btn btn-warning text-dark fw-bold m-2 text-center"
+                        value="sports" onclick="clicked(this)">SPORTS</button>
+                      <button type="button"
+                        class="col-lg-2 col-md-3 col-sm-4 btn btn-warning text-dark fw-bold m-2 text-center"
+                        value="world" onclick="clicked(this)">WORLD</button>
+                      <button type="button"
+                        class="col-lg-2 col-md-3 col-sm-4 btn btn-warning text-dark fw-bold m-2 text-center"
+                        value="politics" onclick="clicked(this)">POLITICS</button>
+                      <button type="button"
+                        class="col-lg-2 col-md-3 col-sm-4 btn btn-warning text-dark fw-bold m-2 text-center"
+                        value="hatke" onclick="clicked(this)">HATKE</button>
+                      <button type="button"
+                        class="col-lg-2 col-md-3 col-sm-4 btn btn-warning text-dark fw-bold m-2 text-center"
+                        value="science" onclick="clicked(this)">SCIENCE</button>
+                      <button type="button"
+                        class="col-lg-3 col-md-4 col-sm-4 btn btn-warning text-dark fw-bold m-2 text-center"
+                        value="autoMobile" onclick="clicked(this)">AUTOMOBILE</button>
+                    </div>
+                  </div>
+              </div>
+              </nav>
+            </div>
+            <!-- new news output area  -->
+            <div class="new_news_output">
+              <div class="textbox current">
+
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </main>
+  <!-- Local Script -->
+  <script src="script.js"></script>
+  <!-- Bootstrap Script -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN"
+    crossorigin="anonymous"></script>
+  <!-- jQuery -->
+  <script src="https://code.jquery.com/jquery-3.6.3.js" integrity="sha256-nQLuAZGRRcILA+6dMBOvcRh5Pe310sBpanc6+QBmyVM="
+    crossorigin="anonymous"></script>
+</body>
+
+</html>
